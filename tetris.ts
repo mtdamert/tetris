@@ -257,7 +257,7 @@ function init(): void {
         highScoreDiv.id = "highScoreText" + (i + 1);
         highScoreDiv.style.color = "rgb(0,0,0)";
         highScoreDiv.style.top = "" + (310 + (20) * i);
-        highScoreDiv.innerHTML = "0";
+        //highScoreDiv.innerHTML = "0";
 
         if (rightPanel !== null) {
             console.log("Adding to right panel: " + highScoreDiv.id);
@@ -1812,10 +1812,6 @@ function setCookie(cname,cvalue,exdays) {
 function incrementScore(amount: number): void {
     currentScore += amount;
 
-
-
-
-
     // If this is a high score, push other old scores down the list
     let prevHighScore: number = 0;
     for (let i: number = 0; i < NUM_HIGH_SCORES; i++) {
@@ -1836,7 +1832,8 @@ function incrementScore(amount: number): void {
                     let highScoreDiv: (HTMLElement | null) = document.getElementById("highScoreText" + (i + 1));
                     if (highScoreDiv != null) {
                         prevHighScore = Number(highScoreDiv.innerHTML);
-                        highScoreDiv.innerHTML = "" + prevHighScore;
+                        if (prevHighScore !== 0)
+                            highScoreDiv.innerHTML = "" + prevHighScore;
                         highScoreDiv.style.color = "rgb(0,0,0)";
                                 
                         updatedHighScore = prevHighScore;
@@ -1850,27 +1847,6 @@ function incrementScore(amount: number): void {
             }
         }
     }
-
-
-
-    /*
-    // Update high score if necessary
-    let highScoreText1: (HTMLElement | null) = document.getElementById("highScoreText1");
-    if (currentScore > currentHighScore) {
-        currentHighScore = currentScore;
-        if (highScoreText1 !== null) {
-            highScoreText1.innerHTML = "" + currentHighScore;
-            highScoreText1.style.color = "rgb(0,192,64)";
-        }
-            
-        setCookie("tetrisHighScore", currentHighScore, 365);
-    }
-    else {
-        if (highScoreText1 !== null) {
-            highScoreText1.style.color = "rgb(0,0,0)";
-        }
-    }
-    */
 
     let scoreBox: (HTMLElement | null) = document.getElementById("scoreBox");
     if (scoreBox !== null) {

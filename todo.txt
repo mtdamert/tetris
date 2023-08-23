@@ -1,5 +1,4 @@
 - Save top 5 scores
-- Don't list 0s on the high score list
 - Fancy animation on tetris (4-rows cleared at once)
 - Inform player if they get a new high score
 - Changing colors for screen
@@ -14,5 +13,6 @@ DONE:
 - unpause
 - Top 5 scores - use an array
 - If I play 3 games in a row, the scores from the 2 latest games will appear highlighted as if they're both the most recent game
+- Don't list 0s on the high score list
 
 
