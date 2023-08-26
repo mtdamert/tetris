@@ -1799,6 +1799,9 @@ function scaleForHue(color: number): number {
     else
         color = 255;
 
+    // Scale color so it's bright (between 128 and 255)
+    color = color / 2 + 128;
+
     return color;
 }
 
