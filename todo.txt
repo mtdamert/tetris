@@ -1,3 +1,6 @@
+- Start game + enable cookies screen
+- Move high scores to back end
+- Move block generation to back end
 - Save top 5 scores
 - Fancy animation on tetris (4-rows cleared at once)
 - Inform player if they get a new high score
